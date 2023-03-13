@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "35a64524-64ad-48a3-95f6-da38a99f70e9",
+		"name": "API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login with Valid credentials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "04754d7e-9c04-47e8-84fa-3754ac04a9f9",
+						"exec": [
+							"pm.test(\"Response should contain User Token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.userToken).to.contain(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "009301c6-fe3e-406e-8908-17ff91ce8797",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"kudussanilo2@yopmail.com\",\n  \"password\": \"qwertY227!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/account/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb668050-32e0-42e7-95c1-89fba30c1420",
+						"exec": [
+							"pm.test(\"Response contains wallet number\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"8327356882\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "c53720ab-97e1-449f-9c25-3cc6076298ae",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Program Wallets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cbf7ff4-0f89-4beb-967d-0d03ed013a5c",
+						"exec": [
+							"pm.test(\"Response should contain account balance\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"6471511548\");",
+							"});",
+							"",
+							"pm.test(\"Response should contain account balance\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].userName).to.eql(\"August Jamal\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "d50062a2-5e27-4f1d-b557-b9a22640648b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/program/082b2c8d-1229-4794-acd1-e66be1c517a8/wallets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Programs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "824143c4-5319-4a72-ab04-096c48f58180",
+						"exec": [
+							"pm.test(\"Response contains program name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].programName).to.eql(\"Blinx pay\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "09ed7938-2e9e-4955-beff-ea8b70b7776c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/programowner/5a380588-86d9-4978-b9f7-42ff3bd16243/programs"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dashboard Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c329f01-9be2-4529-9e71-f444a963288c",
+						"exec": [
+							"pm.test(\"Response contains active programs\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.activePrograms).to.eql(7);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "0a7d5988-e540-429b-8e9a-5f63f70682f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/programowner/dashboard"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains first name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].firstName).to.eql(\"Jprince\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "51457728-8c59-4bea-997a-43671b2b1ebf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/programowner/5a380588-86d9-4978-b9f7-42ff3bd16243/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains user ID\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.userPrograms[0].userId).to.eql(\"8e2e5096-578d-44df-bc0d-f97838c73390\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "05723d49-952c-43b2-98e7-4156c52f4700",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjhlMmU1MDk2LTU3OGQtNDRkZi1iYzBkLWY5NzgzOGM3MzM5MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiTFo3VDZRVllBUU5IM0tLMzI2VFVXVVhFSU83UFUyMkMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsImp0aSI6IjMwODg1M2U4LWJjZjktNDRlNy1iYTY1LTRlYWYwM2M1MzZjMiIsImVtYWlsIjoiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJGaXJzdE5hbWUiOiJEYW1pIiwiTGFzdE5hbWUiOiJCb3NzIiwiQ29tcGFueUlkIjoiZjAwODA1NDgtNGRiYi00ZDI1LWI0NDAtMjE0ZWQ2YjlmNGNlIiwiVXNlcklkIjoiOGUyZTUwOTYtNTc4ZC00NGRmLWJjMGQtZjk3ODM4YzczMzkwIiwibmJmIjoxNjc4MzY1OTk0LCJleHAiOjE2Nzg5NzA3OTQsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.X0LTroq2AxmLFQmtr1BChCsWRV8o01K4UU0ZGx2y--k"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cards",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains last four digit of cards\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].metadata.Last4).to.eql(\"0034\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "84618883-896d-42b3-9c25-81c41c94fc3a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjhlMmU1MDk2LTU3OGQtNDRkZi1iYzBkLWY5NzgzOGM3MzM5MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiTFo3VDZRVllBUU5IM0tLMzI2VFVXVVhFSU83UFUyMkMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsImp0aSI6IjMwODg1M2U4LWJjZjktNDRlNy1iYTY1LTRlYWYwM2M1MzZjMiIsImVtYWlsIjoiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJGaXJzdE5hbWUiOiJEYW1pIiwiTGFzdE5hbWUiOiJCb3NzIiwiQ29tcGFueUlkIjoiZjAwODA1NDgtNGRiYi00ZDI1LWI0NDAtMjE0ZWQ2YjlmNGNlIiwiVXNlcklkIjoiOGUyZTUwOTYtNTc4ZC00NGRmLWJjMGQtZjk3ODM4YzczMzkwIiwibmJmIjoxNjc4MzY1OTk0LCJleHAiOjE2Nzg5NzA3OTQsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.X0LTroq2AxmLFQmtr1BChCsWRV8o01K4UU0ZGx2y--k"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v{{version}}/thirdpartyprocessor/me/gtp/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet Transactions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains trasaction date\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].transactionDate).to.eql(\"2023-03-08T17:36:04.9486454\");",
+							"});",
+							"",
+							"pm.test(\"Response contains transaction description\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].transactionDescription).to.eql(\"Card to Wallet\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response contains transaction amount\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].transactionAmount).to.eql(1.00);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "a89fc125-9630-405f-9821-bc6a98651aed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/user/me/transactions?walletNo=6122256485",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"user",
+						"me",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "walletNo",
+							"value": "6122256485"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains users email address\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.emailAddress).to.eql(\"blueama@qa.team\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "097ed209-ab46-4ac6-a5db-868c92994516",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiYmx1ZWFtYUBxYS50ZWFtIiwiYmx1ZWFtYUBxYS50ZWFtIl0sImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJsdWVhbWFAcWEudGVhbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNERXT1dCSkdaUlpWWUQ2SkY3TUc1NkI2QkE0RDNJQzciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJibHVlYW1hQHFhLnRlYW0iLCJqdGkiOiI3NGIyZWJjZS05MGNiLTQ0MGUtYjk1My1jMTY0NDRhZThmYzIiLCJlbWFpbCI6ImJsdWVhbWFAcWEudGVhbSIsIkZpcnN0TmFtZSI6IkFtYSIsIkxhc3ROYW1lIjoiTHlubiIsIkNvbXBhbnlJZCI6IjVhMzgwNTg4LTg2ZDktNDk3OC1iOWY3LTQyZmYzYmQxNjI0MyIsIlVzZXJJZCI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsIm5iZiI6MTY3ODM3MDA0NCwiZXhwIjoxNjc4OTc0ODQ0LCJpc3MiOiJodHRwczovL2Vzc29sby5jb20iLCJhdWQiOiJodHRwczovL2Vzc29sby5jb20ifQ.2Mol7A_EcXhlj7SpvrQfS5wjVOJm-ks-udcuFQmZDIU"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ama\",\n    \"middleName\": \"Adda\",\n    \"lastName\": \"Lynn\",\n    \"gender\": \"Male\",\n    \"postalCode\": \"100232\",\n    \"address\": \"3, Alade, CIR, 1\",\n    \"city\": \"Ikeja\",\n    \"state\": \"Lagos\",\n    \"country\": \"Nigeria\",\n    \"region\": \"Africa\",\n    \"idNumber\": \"B00890639\",\n    \"idType\": \"Passport\",\n    \"idExpiryDate\": \"2027-06-02\",\n    \"mothersMaidenName\": \"Dorathy Nyaga\",\n    \"dateOfBirth\": \"1994-07-08\",\n    \"buildingNumber\": \"3\",\n    \"streetType\": \"CIR\",\n    \"streetName\": \"Alade\",\n    \"unitNumber\": \"1\",\n    \"suburb\": \"\",\n    \"nationality\": \"Nigerian\",\n    \"placeOfBirth\": \"\",\n    \"employerName\": \"Es Solo\",\n    \"occupation\": \"IT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/users/me/update-profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Fund Program Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains a success message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Success\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "206f53ae-469c-4744-b377-6d17f7386aab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiYmx1ZWFtYUBxYS50ZWFtIiwiYmx1ZWFtYUBxYS50ZWFtIl0sImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJsdWVhbWFAcWEudGVhbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNERXT1dCSkdaUlpWWUQ2SkY3TUc1NkI2QkE0RDNJQzciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJibHVlYW1hQHFhLnRlYW0iLCJqdGkiOiI3NGIyZWJjZS05MGNiLTQ0MGUtYjk1My1jMTY0NDRhZThmYzIiLCJlbWFpbCI6ImJsdWVhbWFAcWEudGVhbSIsIkZpcnN0TmFtZSI6IkFtYSIsIkxhc3ROYW1lIjoiTHlubiIsIkNvbXBhbnlJZCI6IjVhMzgwNTg4LTg2ZDktNDk3OC1iOWY3LTQyZmYzYmQxNjI0MyIsIlVzZXJJZCI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsIm5iZiI6MTY3ODM3MDA0NCwiZXhwIjoxNjc4OTc0ODQ0LCJpc3MiOiJodHRwczovL2Vzc29sby5jb20iLCJhdWQiOiJodHRwczovL2Vzc29sby5jb20ifQ.2Mol7A_EcXhlj7SpvrQfS5wjVOJm-ks-udcuFQmZDIU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amountToLoad\": \"1\",\n    \"walletNoToLoad\": \"2344261285\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/wallet/topupprogramwallet"
+			},
+			"response": []
+		},
+		{
+			"name": "Fund User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
+						"exec": [
+							"pm.test(\"Response contains Transaction Successful\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Transaction Successful\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "c102bcd0-86f8-4cd8-bfde-a17da32620c5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiYmx1ZWFtYUBxYS50ZWFtIiwiYmx1ZWFtYUBxYS50ZWFtIl0sImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJsdWVhbWFAcWEudGVhbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNERXT1dCSkdaUlpWWUQ2SkY3TUc1NkI2QkE0RDNJQzciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJibHVlYW1hQHFhLnRlYW0iLCJqdGkiOiI3NGIyZWJjZS05MGNiLTQ0MGUtYjk1My1jMTY0NDRhZThmYzIiLCJlbWFpbCI6ImJsdWVhbWFAcWEudGVhbSIsIkZpcnN0TmFtZSI6IkFtYSIsIkxhc3ROYW1lIjoiTHlubiIsIkNvbXBhbnlJZCI6IjVhMzgwNTg4LTg2ZDktNDk3OC1iOWY3LTQyZmYzYmQxNjI0MyIsIlVzZXJJZCI6IjgyOWNiM2IwLTI1OTUtNDRhMi1hZDA2LTU0ZGJjYzcxODMyMiIsIm5iZiI6MTY3ODM3MDA0NCwiZXhwIjoxNjc4OTc0ODQ0LCJpc3MiOiJodHRwczovL2Vzc29sby5jb20iLCJhdWQiOiJodHRwczovL2Vzc29sby5jb20ifQ.2Mol7A_EcXhlj7SpvrQfS5wjVOJm-ks-udcuFQmZDIU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyId\": \"5a380588-86d9-4978-b9f7-42ff3bd16243\",\n    \"programId\": \"082b2c8d-1229-4794-acd1-e66be1c517a8\",\n    \"walletToLoad\": [\n        \"6471511548\"\n    ],\n    \"currency\": \"USD\",\n    \"amount\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/wallet/5a380588-86d9-4978-b9f7-42ff3bd16243/topup"
+			},
+			"response": []
+		}
+	]
+}
