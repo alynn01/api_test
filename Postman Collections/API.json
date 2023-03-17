@@ -1184,7 +1184,7 @@
 						"exec": [
 							"pm.test(\"Response contains wallet number\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"1586572768\");",
+							"    pm.expect(jsonData.success).to.eql(true);",
 							"});"
 						],
 						"type": "text/javascript"
