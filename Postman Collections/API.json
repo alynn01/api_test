@@ -1182,7 +1182,7 @@
 					"script": {
 						"id": "62bd04ac-03dd-49b6-a1f2-35fab76fd760",
 						"exec": [
-							"pm.test(\"Response contains wallet number\", function () {",
+							"pm.test(\"Response contains success, function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.success).to.eql(true);",
 							"});"
