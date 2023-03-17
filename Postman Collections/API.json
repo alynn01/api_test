@@ -111,7 +111,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"url": "{{baseUrl}}/api/v{{version}}/program/082b2c8d-1229-4794-acd1-e66be1c517a8/wallets"
+				"url": "{{baseUrl}}/api/v{{version}}/program/16db899b-1a10-4cb2-9063-7b682a7b729d/wallets"
 			},
 			"response": []
 		},
