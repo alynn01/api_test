@@ -227,7 +227,7 @@
 						"exec": [
 							"pm.test(\"Response contains user ID\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data.userPrograms[0].userId).to.eql(\"8e2e5096-578d-44df-bc0d-f97838c73390\");",
+							"    pm.expect(jsonData.data.userPrograms[0].userId).to.eql(\"e76c3441-e7a9-4f20-93d2-04c6a0e027f2\");",
 							"});"
 						],
 						"type": "text/javascript"
