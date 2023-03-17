@@ -22,7 +22,7 @@
 					}
 				}
 			],
-			"_postman_id": "009301c6-fe3e-406e-8908-17ff91ce8797",
+			"id": "009301c6-fe3e-406e-8908-17ff91ce8797",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -52,14 +52,14 @@
 						"exec": [
 							"pm.test(\"Response contains wallet number\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"8327356882\");",
+							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"1586572768\");",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"_postman_id": "c53720ab-97e1-449f-9c25-3cc6076298ae",
+			"id": "c53720ab-97e1-449f-9c25-3cc6076298ae",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -98,7 +98,7 @@
 					}
 				}
 			],
-			"_postman_id": "d50062a2-5e27-4f1d-b557-b9a22640648b",
+			"id": "d50062a2-5e27-4f1d-b557-b9a22640648b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -132,7 +132,7 @@
 					}
 				}
 			],
-			"_postman_id": "09ed7938-2e9e-4955-beff-ea8b70b7776c",
+			"id": "09ed7938-2e9e-4955-beff-ea8b70b7776c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -166,7 +166,7 @@
 					}
 				}
 			],
-			"_postman_id": "0a7d5988-e540-429b-8e9a-5f63f70682f6",
+			"id": "0a7d5988-e540-429b-8e9a-5f63f70682f6",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -200,7 +200,7 @@
 					}
 				}
 			],
-			"_postman_id": "51457728-8c59-4bea-997a-43671b2b1ebf",
+			"id": "51457728-8c59-4bea-997a-43671b2b1ebf",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -234,7 +234,7 @@
 					}
 				}
 			],
-			"_postman_id": "05723d49-952c-43b2-98e7-4156c52f4700",
+			"id": "05723d49-952c-43b2-98e7-4156c52f4700",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -268,7 +268,7 @@
 					}
 				}
 			],
-			"_postman_id": "84618883-896d-42b3-9c25-81c41c94fc3a",
+			"id": "84618883-896d-42b3-9c25-81c41c94fc3a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -314,7 +314,7 @@
 					}
 				}
 			],
-			"_postman_id": "a89fc125-9630-405f-9821-bc6a98651aed",
+			"id": "a89fc125-9630-405f-9821-bc6a98651aed",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -350,6 +350,227 @@
 			"response": []
 		},
 		{
+			"name": "To login as a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "150d3fab-de36-4740-a352-423703327a39",
+						"exec": [
+							"pm.test(\"Response should contain User Token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.userToken).to.contain(\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6055e821-d7c4-4bda-81cc-801995c98c0a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"guestone@qa.team\",\n  \"password\": \"P@$sw0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/account/login"
+			},
+			"response": [
+				{
+					"id": "491ed61b-cae7-482c-a726-9d42f261e609",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"K3w3@IOGL.ji\",\n  \"password\": \"ut elit consequat et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"anim in magna elit\",\n  \"data\": {\n    \"userId\": \"nisi do ex reprehenderit\",\n    \"companyId\": \"in culpa \",\n    \"email\": \"aliqua ex dolor\",\n    \"firstname\": \"velit in\",\n    \"lastName\": \"ullamco non reprehenderit sed\",\n    \"userToken\": \"dolor culpa consequat\",\n    \"refreshToken\": \"in\",\n    \"isFirstLogin\": true,\n    \"dateLastLoggedIn\": \"1985-06-04T00:36:25.132Z\"\n  }\n}"
+				},
+				{
+					"id": "d6f26a41-58e1-41b1-b3e6-e2c9d9a8063b",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"K3w3@IOGL.ji\",\n  \"password\": \"ut elit consequat et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/login"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"incididunt cupidatat mollit\",\n  \"data\": \"elit et ea consectetur\"\n}"
+				},
+				{
+					"id": "5327e672-a50b-4b68-9c56-9f471d207792",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"K3w3@IOGL.ji\",\n  \"password\": \"ut elit consequat et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/login"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"incididunt cupidatat mollit\",\n  \"data\": \"elit et ea consectetur\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Send OTP to email address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b9426354-9f82-4a85-9391-ea28fd61981a",
+						"exec": [
+							"pm.test(\"Response contains otp sent\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Otp Sent\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "921f6f43-c6c0-497a-bbb9-5fdcace2e154",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/account/sendemailotp?email=guestone@qa.team",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"account",
+						"sendemailotp"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "guestone@qa.team"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f068c8f6-5d1a-4ceb-81e5-4d50420f283e",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/account/sendemailotp?email=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"account",
+								"sendemailotp"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
 			"name": "Update User Profile",
 			"event": [
 				{
@@ -366,7 +587,7 @@
 					}
 				}
 			],
-			"_postman_id": "097ed209-ab46-4ac6-a5db-868c92994516",
+			"id": "097ed209-ab46-4ac6-a5db-868c92994516",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -393,6 +614,567 @@
 			"response": []
 		},
 		{
+			"name": "Send OTP to phone number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "449513af-862c-478e-a354-31b84fc0addb",
+						"exec": [
+							"pm.test(\"Response contains OTP sent\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Otp Sent\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "73715fd5-8aa7-4500-85a7-4ad14675b405",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/account/sendphoneotp?phone=2349072609472",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"account",
+						"sendphoneotp"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "2349072609472"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "02531df5-b96b-499a-806f-e991b4b174d9",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/account/sendphoneotp?phone=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"account",
+								"sendphoneotp"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Send Forgot Password Mail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0ab3065-4391-46c7-b7fd-bff5278182df",
+						"exec": [
+							"pm.test(\"Response contains email sent\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"Email Sent\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2cd5a2da-8ce3-4266-9d23-92c3040acc6d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/account/sendforgotpasswordmail?email=guestone@qa.team&redirectUrl=https://devcardholder.essolo.com/onboarding/reset-password",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"account",
+						"sendforgotpasswordmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "guestone@qa.team"
+						},
+						{
+							"key": "redirectUrl",
+							"value": "https://devcardholder.essolo.com/onboarding/reset-password"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ccc6ce7f-b0c4-4a0b-876d-0ff6e5daf6c8",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/account/sendforgotpasswordmail?email=labore velit&redirectUrl=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"account",
+								"sendforgotpasswordmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "labore velit"
+								},
+								{
+									"key": "redirectUrl",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Change Password (Auth)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9850ebee-a4a4-47aa-997c-f3d530dce7eb",
+						"exec": [
+							"pm.test(\"Password is changed successfully\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Password Updated Successfully\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0468fe4b-1f6e-40f0-b1f7-1a1a21fadcf8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"currentPassword\": \"P@$sw0rd\",\n  \"email\": \"guestone@qa.team\",\n  \"isFirstLogin\": false,\n  \"newPassword\": \"P@$sw0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/account/changepassword"
+			},
+			"response": [
+				{
+					"id": "30f3ae98-a75a-43e7-84c9-662f5954c83a",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currentPassword\": \"cupidatat voluptate pariatur\",\n  \"email\": \"ea mollit ut\",\n  \"isFirstLogin\": false,\n  \"newPassword\": \"ex magna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/changepassword"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "67630a2f-cbe9-4e9a-8e60-a367e47e6233",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currentPassword\": \"cupidatat voluptate pariatur\",\n  \"email\": \"ea mollit ut\",\n  \"isFirstLogin\": false,\n  \"newPassword\": \"ex magna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/changepassword"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "361eb81b-76c6-4b4c-be48-f85ea6ae257d",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currentPassword\": \"cupidatat voluptate pariatur\",\n  \"email\": \"ea mollit ut\",\n  \"isFirstLogin\": false,\n  \"newPassword\": \"ex magna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/account/changepassword"
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Program Owner/Super Admin - Update Company BioData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "acee40d2-c4d6-423c-bed4-3087eaaf7551",
+						"exec": [
+							"pm.test(\"Response body contains date created\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.dateCreated).to.eql(\"2023-01-07T16:02:11.0284467\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "839200f7-f5a4-4eac-8002-26ecac4a53c1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "companyName",
+							"value": "qui et adipisicing aliquip",
+							"type": "text"
+						},
+						{
+							"key": "companyAddress",
+							"value": "ex sunt aliquip aliqua",
+							"type": "text"
+						},
+						{
+							"key": "companyRegistrationNo",
+							"value": "ullamco officia occaecat quis",
+							"type": "text"
+						},
+						{
+							"key": "companyLocation",
+							"value": "ipsum deserunt commodo sint",
+							"type": "text"
+						},
+						{
+							"key": "companyRegion",
+							"value": "dolore commodo sit do",
+							"type": "text"
+						},
+						{
+							"key": "companyRegistrationDocument",
+							"type": "file",
+							"value": null
+						},
+						{
+							"key": "companyMemorandumOfAssociation",
+							"type": "file",
+							"value": null
+						},
+						{
+							"key": "companyLogo",
+							"type": "file",
+							"value": null
+						},
+						{
+							"key": "additionalDocs",
+							"value": "[\"sed sit culpa labore officia\",\"esse Excepteur sit\"]",
+							"type": "text"
+						},
+						{
+							"key": "playStoreAppUrl",
+							"value": "laboris e",
+							"type": "text"
+						},
+						{
+							"key": "appleStoreAppUrl",
+							"value": "sunt",
+							"type": "text"
+						},
+						{
+							"key": "backgroundColour",
+							"value": "deserunt ea proident",
+							"type": "text"
+						},
+						{
+							"key": "textColour",
+							"value": "eiusmod reprehen",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/company?companyId=f0080548-4dbb-4d25-b440-214ed6b9f4ce",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"company"
+					],
+					"query": [
+						{
+							"key": "companyId",
+							"value": "f0080548-4dbb-4d25-b440-214ed6b9f4ce"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "80a7c963-9d79-48a4-a2a9-5741acc6690c",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyName",
+									"value": "fugiat",
+									"type": "text"
+								},
+								{
+									"key": "companyAddress",
+									"value": "ut ",
+									"type": "text"
+								},
+								{
+									"key": "companyRegistrationNo",
+									"value": "Duis do nostrud mollit",
+									"type": "text"
+								},
+								{
+									"key": "companyLocation",
+									"value": "est aliqua labore",
+									"type": "text"
+								},
+								{
+									"key": "companyRegion",
+									"value": "esse deserunt eu",
+									"type": "text"
+								},
+								{
+									"key": "companyRegistrationDocument",
+									"type": "file"
+								},
+								{
+									"key": "companyMemorandumOfAssociation",
+									"type": "file"
+								},
+								{
+									"key": "companyLogo",
+									"type": "file"
+								},
+								{
+									"key": "additionalDocs",
+									"value": "[\"aute \",\"aliqua in do\"]",
+									"type": "text"
+								},
+								{
+									"key": "playStoreAppUrl",
+									"value": "sint anim incididunt do Ut",
+									"type": "text"
+								},
+								{
+									"key": "appleStoreAppUrl",
+									"value": "enim ad id qui",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColour",
+									"value": "consequat tempor",
+									"type": "text"
+								},
+								{
+									"key": "textColour",
+									"value": "do dolore cillum Excepteur",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company?companyId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
+		},
+		{
 			"name": "Fund Program Account",
 			"event": [
 				{
@@ -409,7 +1191,7 @@
 					}
 				}
 			],
-			"_postman_id": "206f53ae-469c-4744-b377-6d17f7386aab",
+			"id": "206f53ae-469c-4744-b377-6d17f7386aab",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -436,6 +1218,1073 @@
 			"response": []
 		},
 		{
+			"name": "Get All User Wallets for Company - Program Owner (Auth)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "62bd04ac-03dd-49b6-a1f2-35fab76fd760",
+						"exec": [
+							"pm.test(\"Response contains wallet number\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"1586572768\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "037c6b33-fbf3-4a17-b1aa-6f4cd3aea4fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+			},
+			"response": [
+				{
+					"id": "96568b75-e7f9-431c-ad15-8dff9ac093d9",
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": true,\n  \"message\": \"aliqua commodo aliquip ullamco\",\n  \"data\": [\n    {\n      \"id\": \"tempor nisi Lorem\",\n      \"companyId\": \"sint conseq\",\n      \"walletNo\": \"aliqua eu do sit amet\",\n      \"accountType\": \"Savings\",\n      \"accountOwnerType\": \"Program\",\n      \"accountBalanceNet\": 1775138.9427417964,\n      \"accountBalanceGross\": -99335956.98820552,\n      \"accountCurrency\": \"ALL\",\n      \"walletStatus\": \"Inactive\",\n      \"dateCreated\": \"1994-09-01T05:30:46.349Z\",\n      \"programName\": \"minim\",\n      \"userName\": \"sunt nostrud Lorem cillum Ut\",\n      \"programId\": \"id proident anim irure\",\n      \"userId\": \"non ad nisi i\"\n    },\n    {\n      \"id\": \"non Duis in officia\",\n      \"companyId\": \"nisi quis qui ipsum\",\n      \"walletNo\": \"qui dolore\",\n      \"accountType\": \"Instant\",\n      \"accountOwnerType\": \"Program\",\n      \"accountBalanceNet\": -14286014.361974925,\n      \"accountBalanceGross\": 62420489.74909246,\n      \"accountCurrency\": \"MWK\",\n      \"walletStatus\": \"Active\",\n      \"dateCreated\": \"1963-12-13T18:46:54.590Z\",\n      \"programName\": \"anim do cupidatat esse laborum\",\n      \"userName\": \"proident consequat aliquip\",\n      \"programId\": \"mollit\",\n      \"userId\": \"veniam esse ex\"\n    }\n  ]\n}"
+				},
+				{
+					"id": "d30e7258-f7f0-4b08-80ce-b7fe76eb383a",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				},
+				{
+					"id": "091c312d-9f14-4dbc-af89-9048ead20174",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "8e9fba99-4fdf-40c4-83c5-3158b2ad0ed3",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "26294ec5-4c64-4d21-bd9d-84182664ad79",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/company/user/wallets"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transaction history (Auth roles: Program Admin)",
+			"id": "e97caaea-3b41-4227-b926-873e4cd24fdf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"company",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "programId",
+							"value": "labore velit"
+						},
+						{
+							"key": "walletNo",
+							"value": "labore velit"
+						},
+						{
+							"key": "pageNumber",
+							"value": "31144679"
+						},
+						{
+							"key": "pageSize",
+							"value": "31144679"
+						},
+						{
+							"key": "startDate",
+							"value": "1979-08-09T10:22:34.718Z"
+						},
+						{
+							"key": "endDate",
+							"value": "1979-08-09T10:22:34.718Z"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9406c956-3d05-4825-bcc0-dc178b5ad655",
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "programId",
+									"value": "labore velit"
+								},
+								{
+									"key": "walletNo",
+									"value": "labore velit"
+								},
+								{
+									"key": "pageNumber",
+									"value": "31144679"
+								},
+								{
+									"key": "pageSize",
+									"value": "31144679"
+								},
+								{
+									"key": "startDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								},
+								{
+									"key": "endDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": true,\n  \"message\": \"elit \",\n  \"data\": [\n    {\n      \"beneficiaryAccountNo\": \"elit esse anim nostrud\",\n      \"beneficiaryName\": \"qui consectetur\",\n      \"companyId\": \"et sed esse\",\n      \"initiatedBy\": \"velit\",\n      \"surcharge\": -40970999.4526513,\n      \"totalAmount\": -2613834.868247971,\n      \"transactionAmount\": 31217421.765777156,\n      \"transactionChannel\": \"ESAdmin\",\n      \"transactionCurrency\": \"PKR\",\n      \"transactionDate\": \"2010-04-02T10:08:42.968Z\",\n      \"transactionDescription\": \"qui pariatur\",\n      \"transactionEntry\": \"Debit\",\n      \"transactionId\": \"in ad irure dolor\",\n      \"transactionStatus\": \"Pending\",\n      \"transactionType\": \"TransferCharges\",\n      \"id\": \"laboru\",\n      \"dateCreated\": \"1996-06-28T20:18:29.581Z\",\n      \"dateUpdated\": \"1991-08-05T05:44:25.700Z\",\n      \"programId\": \"aliquip in\",\n      \"userId\": \"et Lorem consectetur\",\n      \"programName\": \"adipisicing mollit in non\"\n    },\n    {\n      \"beneficiaryAccountNo\": \"dolore exercitation sint officia\",\n      \"beneficiaryName\": \"nisi fugiat\",\n      \"companyId\": \"anim nulla sed Ut\",\n      \"initiatedBy\": \"incididunt dolore aute do amet\",\n      \"surcharge\": 98202841.8016383,\n      \"totalAmount\": -42374727.01849993,\n      \"transactionAmount\": 31901064.86785513,\n      \"transactionChannel\": \"MobileApp\",\n      \"transactionCurrency\": \"PGK\",\n      \"transactionDate\": \"1955-12-14T12:56:50.238Z\",\n      \"transactionDescription\": \"ad\",\n      \"transactionEntry\": \"Credit\",\n      \"transactionId\": \"non ir\",\n      \"transactionStatus\": \"Completed\",\n      \"transactionType\": \"CardTransactions\",\n      \"id\": \"proident\",\n      \"dateCreated\": \"1986-02-17T17:09:12.609Z\",\n      \"dateUpdated\": \"1957-08-01T16:03:25.346Z\",\n      \"programId\": \"incididunt v\",\n      \"userId\": \"elit sint reprehenderit\",\n      \"programName\": \"exercitation anim\"\n    }\n  ],\n  \"metaData\": {\n    \"totalUnfilteredItems\": 91620810,\n    \"totalItems\": 60665213,\n    \"pageNumber\": -66007550,\n    \"pageSize\": 96673459,\n    \"totalPages\": 943860,\n    \"hasPrevious\": false,\n    \"hasNext\": false\n  }\n}"
+				},
+				{
+					"id": "5303abc5-2157-42f2-9988-4691bb4e680b",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "programId",
+									"value": "labore velit"
+								},
+								{
+									"key": "walletNo",
+									"value": "labore velit"
+								},
+								{
+									"key": "pageNumber",
+									"value": "31144679"
+								},
+								{
+									"key": "pageSize",
+									"value": "31144679"
+								},
+								{
+									"key": "startDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								},
+								{
+									"key": "endDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				},
+				{
+					"id": "14c0311c-3a52-4afe-ad1a-d7bc695a89f3",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "programId",
+									"value": "labore velit"
+								},
+								{
+									"key": "walletNo",
+									"value": "labore velit"
+								},
+								{
+									"key": "pageNumber",
+									"value": "31144679"
+								},
+								{
+									"key": "pageSize",
+									"value": "31144679"
+								},
+								{
+									"key": "startDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								},
+								{
+									"key": "endDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "e1ed82e3-09cf-4baa-abf3-c6e79ac97d77",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "programId",
+									"value": "labore velit"
+								},
+								{
+									"key": "walletNo",
+									"value": "labore velit"
+								},
+								{
+									"key": "pageNumber",
+									"value": "31144679"
+								},
+								{
+									"key": "pageSize",
+									"value": "31144679"
+								},
+								{
+									"key": "startDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								},
+								{
+									"key": "endDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "99bdfac7-a41e-4a75-ad4b-3be9622a8d05",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/company/transactions?programId=labore velit&walletNo=labore velit&pageNumber=31144679&pageSize=31144679&startDate=1979-08-09T10:22:34.718Z&endDate=1979-08-09T10:22:34.718Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"company",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "programId",
+									"value": "labore velit"
+								},
+								{
+									"key": "walletNo",
+									"value": "labore velit"
+								},
+								{
+									"key": "pageNumber",
+									"value": "31144679"
+								},
+								{
+									"key": "pageSize",
+									"value": "31144679"
+								},
+								{
+									"key": "startDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								},
+								{
+									"key": "endDate",
+									"value": "1979-08-09T10:22:34.718Z"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": " (Auth)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c46ebc7-35e0-48ef-a17b-f3cb66e602b6",
+						"exec": [
+							"pm.test(\"Response contains language name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.languageName).to.eql(\"English\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "894f544e-6bfc-48ce-81ff-c653f392314a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"languageName\": \"English\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+			},
+			"response": [
+				{
+					"id": "1ab21ee5-83a2-4bb2-bca1-95aee79e7aa9",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"languageName\": \"do laborum ea qui cillum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"labore ea minim occaecat\",\n  \"data\": {\n    \"companyId\": \"Excepteur in ut\",\n    \"languageName\": \"veniam dolore\",\n    \"id\": \"esse\",\n    \"dateCreated\": \"1980-06-05T10:28:07.090Z\",\n    \"dateUpdated\": \"2000-06-07T17:41:50.306Z\"\n  }\n}"
+				},
+				{
+					"id": "acf86b0c-8eee-481a-ae23-635bad9e6cc3",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"languageName\": \"do laborum ea qui cillum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				},
+				{
+					"id": "c138668e-9491-43f0-afa3-b380cf1a3262",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"languageName\": \"do laborum ea qui cillum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "0d344e7b-4b3d-49a5-abf6-58878f28ba38",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"languageName\": \"do laborum ea qui cillum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "0740f5f1-6c7e-4419-bf57-36b659f52cac",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"languageName\": \"do laborum ea qui cillum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v{{version}}/langauge/createlanguage"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": " (Auth)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65361fe6-01bd-441e-a4f5-6e438205c9ec",
+						"exec": [
+							"pm.test(\"Response was successful\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.success).to.eql(true);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2cf04c1d-bdf7-4c22-8810-3da0443dad15",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=6c151fe1-50d1-44aa-a62e-ed149c802253",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v{{version}}",
+						"langauge",
+						"getlanguagebyid"
+					],
+					"query": [
+						{
+							"key": "languageId",
+							"value": "6c151fe1-50d1-44aa-a62e-ed149c802253"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b2312f37-8671-4691-a74b-8d306ae0d554",
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"langauge",
+								"getlanguagebyid"
+							],
+							"query": [
+								{
+									"key": "languageId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"labore ea minim occaecat\",\n  \"data\": {\n    \"companyId\": \"Excepteur in ut\",\n    \"languageName\": \"veniam dolore\",\n    \"id\": \"esse\",\n    \"dateCreated\": \"1980-06-05T10:28:07.090Z\",\n    \"dateUpdated\": \"2000-06-07T17:41:50.306Z\"\n  }\n}"
+				},
+				{
+					"id": "f563f35b-35af-4825-ac8a-67d13b9fc9e0",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"langauge",
+								"getlanguagebyid"
+							],
+							"query": [
+								{
+									"key": "languageId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				},
+				{
+					"id": "9f353748-76cc-480a-8f6e-2c51f0d1753f",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"langauge",
+								"getlanguagebyid"
+							],
+							"query": [
+								{
+									"key": "languageId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "16332646-9430-4977-9803-aa5ecfac842a",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"langauge",
+								"getlanguagebyid"
+							],
+							"query": [
+								{
+									"key": "languageId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "21cd8151-0dd4-45ba-8b08-91fe9875e611",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v{{version}}/langauge/getlanguagebyid?languageId=labore velit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v{{version}}",
+								"langauge",
+								"getlanguagebyid"
+							],
+							"query": [
+								{
+									"key": "languageId",
+									"value": "labore velit"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
+		},
+		{
 			"name": "Fund User Account",
 			"event": [
 				{
@@ -452,7 +2301,7 @@
 					}
 				}
 			],
-			"_postman_id": "c102bcd0-86f8-4cd8-bfde-a17da32620c5",
+			"id": "c102bcd0-86f8-4cd8-bfde-a17da32620c5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -477,6 +2326,166 @@
 				"url": "{{baseUrl}}/api/v{{version}}/wallet/5a380588-86d9-4978-b9f7-42ff3bd16243/topup"
 			},
 			"response": []
+		},
+		{
+			"name": " (Auth)",
+			"id": "eef795a6-840d-4269-9853-549a0d4dc0f9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{bearerToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+			},
+			"response": [
+				{
+					"id": "eaba204f-7c22-423d-8281-911bf86d8ed5",
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"cupidatat sint aliqua\",\n  \"data\": {\n    \"companyId\": \"dolor\",\n    \"currencyName\": \"dolor cupidatat ut est Excepteur\",\n    \"id\": \"Ut\",\n    \"dateCreated\": \"1949-01-07T13:58:47.548Z\",\n    \"dateUpdated\": \"1989-08-04T07:52:39.387Z\",\n    \"currencySymbol\": \"amet veniam q\"\n  }\n}"
+				},
+				{
+					"id": "d9af0460-d166-4d20-9190-fbd58888d71f",
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"cupidatat sint aliqua\",\n  \"data\": {\n    \"companyId\": \"dolor\",\n    \"currencyName\": \"dolor cupidatat ut est Excepteur\",\n    \"id\": \"Ut\",\n    \"dateCreated\": \"1949-01-07T13:58:47.548Z\",\n    \"dateUpdated\": \"1989-08-04T07:52:39.387Z\",\n    \"currencySymbol\": \"amet veniam q\"\n  }\n}"
+				},
+				{
+					"id": "170ffa2c-84a3-4bca-8a5a-55a2a0a878bb",
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "7debe6f1-39fa-4f4d-97d6-8cce2cd870c1",
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				},
+				{
+					"id": "2f44804e-8e13-479c-a1ee-99d4ad887b87",
+					"name": "Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": "{{baseUrl}}/api/v{{version}}/currencyconfiguration/getallcurrencyconfig"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"success\": false,\n  \"message\": \"amet mollit eiusmod aute\",\n  \"data\": {}\n}"
+				}
+			]
 		}
 	]
 }
