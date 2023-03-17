@@ -300,7 +300,7 @@
 							"",
 							"pm.test(\"Response contains transaction description\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].transactionDescription).to.eql(\"Card to Wallet\");",
+							"    pm.expect(jsonData.data[0].transactionDescription).to.eql(\"Funding of User wallet\");",
 							"});",
 							"",
 							"",
