@@ -295,7 +295,7 @@
 						"exec": [
 							"pm.test(\"Response contains trasaction date\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].transactionDate).to.eql(\"2023-03-08T17:36:04.9486454\");",
+							"    pm.expect(jsonData.data[0].transactionDate).to.eql(\"2023-03-16T18:52:51.495983\");",
 							"});",
 							"",
 							"pm.test(\"Response contains transaction description\", function () {",
