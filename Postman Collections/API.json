@@ -125,7 +125,7 @@
 						"exec": [
 							"pm.test(\"Response contains program name\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].programName).to.eql(\"Blinx pay\");",
+							"    pm.expect(jsonData.data[0].programName).to.eql(\"adamu\");",
 							"});"
 						],
 						"type": "text/javascript"
