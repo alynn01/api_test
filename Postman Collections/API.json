@@ -571,49 +571,6 @@
 			]
 		},
 		{
-			"name": "Update User Profile",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "2fd96196-45d3-4c06-8f86-601176f71bfc",
-						"exec": [
-							"pm.test(\"Response contains users email address\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data.emailAddress).to.eql(\"blueama@qa.team\");",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "097ed209-ab46-4ac6-a5db-868c92994516",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "{{bearerToken}}"
-					}
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Ama\",\n    \"middleName\": \"Adda\",\n    \"lastName\": \"Lynn\",\n    \"gender\": \"Male\",\n    \"postalCode\": \"100232\",\n    \"address\": \"3, Alade, CIR, 1\",\n    \"city\": \"Ikeja\",\n    \"state\": \"Lagos\",\n    \"country\": \"Nigeria\",\n    \"region\": \"Africa\",\n    \"idNumber\": \"B00890639\",\n    \"idType\": \"Passport\",\n    \"idExpiryDate\": \"2027-06-02\",\n    \"mothersMaidenName\": \"Dorathy Nyaga\",\n    \"dateOfBirth\": \"1994-07-08\",\n    \"buildingNumber\": \"3\",\n    \"streetType\": \"CIR\",\n    \"streetName\": \"Alade\",\n    \"unitNumber\": \"1\",\n    \"suburb\": \"\",\n    \"nationality\": \"Nigerian\",\n    \"placeOfBirth\": \"\",\n    \"employerName\": \"Es Solo\",\n    \"occupation\": \"IT\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/api/v{{version}}/users/me/update-profile"
-			},
-			"response": []
-		},
-		{
 			"name": "Send OTP to phone number",
 			"event": [
 				{
