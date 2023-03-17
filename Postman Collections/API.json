@@ -86,12 +86,12 @@
 						"exec": [
 							"pm.test(\"Response should contain account balance\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"6471511548\");",
+							"    pm.expect(jsonData.data[0].walletNo).to.eql(\"2581332665\");",
 							"});",
 							"",
 							"pm.test(\"Response should contain account balance\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].userName).to.eql(\"August Jamal\");",
+							"    pm.expect(jsonData.data[0].userName).to.eql(\"sam samzen\");",
 							"});"
 						],
 						"type": "text/javascript"
