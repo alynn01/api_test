@@ -2280,7 +2280,7 @@
 						}
 					}
 				},
-				"url": "{{baseUrl}}/api/v{{version}}/wallet/97a17709-74f0-4417-b6de-5c3a31dd366a/topup"
+				"url": "{{baseUrl}}/api/v{{version}}/wallet/f0080548-4dbb-4d25-b440-214ed6b9f4ce/topup"
 			},
 			"response": []
 		},
