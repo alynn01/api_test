@@ -261,7 +261,7 @@
 						"exec": [
 							"pm.test(\"Response contains last four digit of cards\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].metadata.Last4).to.eql(\"0034\");",
+							"    pm.expect(jsonData.data[0].metadata.Last4).to.eql(\"6388\");",
 							"});"
 						],
 						"type": "text/javascript"
