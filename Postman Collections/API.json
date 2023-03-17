@@ -52,7 +52,7 @@
 						"exec": [
 							"pm.test(\"Response contains wallet status is active\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].walwalletStatusletNo).to.eql(\"Active\");",
+							"    pm.expect(jsonData.data[0].walletStatus).to.eql(\"Active\");",
 							"});"
 						],
 						"type": "text/javascript"
