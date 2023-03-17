@@ -159,7 +159,7 @@
 						"exec": [
 							"pm.test(\"Response contains active programs\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data.activePrograms).to.eql(7);",
+							"    pm.expect(jsonData.success).to.eql(7);",
 							"});"
 						],
 						"type": "text/javascript"
