@@ -2273,14 +2273,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"companyId\": \"5a380588-86d9-4978-b9f7-42ff3bd16243\",\n    \"programId\": \"082b2c8d-1229-4794-acd1-e66be1c517a8\",\n    \"walletToLoad\": [\n        \"6471511548\"\n    ],\n    \"currency\": \"USD\",\n    \"amount\": \"1\"\n}",
+					"raw": "{\n    \"companyId\": \"f0080548-4dbb-4d25-b440-214ed6b9f4ce\",\n    \"programId\": \"97a17709-74f0-4417-b6de-5c3a31dd366a\",\n    \"walletToLoad\": [\n        \"3618163358\"\n    ],\n    \"currency\": \"USD\",\n    \"amount\": \"1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "{{baseUrl}}/api/v{{version}}/wallet/5a380588-86d9-4978-b9f7-42ff3bd16243/topup"
+				"url": "{{baseUrl}}/api/v{{version}}/wallet/97a17709-74f0-4417-b6de-5c3a31dd366a/topup"
 			},
 			"response": []
 		},
