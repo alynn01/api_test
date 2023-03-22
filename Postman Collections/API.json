@@ -1903,7 +1903,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "verify OTP",
 			"id": "6fada557-dcf2-49c8-bf17-c9046e5b0d68",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
