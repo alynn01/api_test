@@ -1912,7 +1912,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/account/sendemailotp?email=damiuser001@yopmail.com",
+					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/account/sendemailotp?phone=2349072609472",
 					"protocol": "https",
 					"host": [
 						"iws-api-staging",
@@ -1927,8 +1927,8 @@
 					],
 					"query": [
 						{
-							"key": "email",
-							"value": "damiuser001@yopmail.com"
+							"key": "phone",
+							"value": "2349072609472"
 						}
 					]
 				}
