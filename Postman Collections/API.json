@@ -1921,8 +1921,33 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/account/verifyauthotp?emailOrPhone=damiuser001@yopmail.com&otp=66205",
+					"protocol": "https",
+					"host": [
+						"iws-api-staging",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"verifyauthotp"
+					],
+					"query": [
+						{
+							"key": "emailOrPhone",
+							"value": "damiuser001@yopmail.com"
+						},
+						{
+							"key": "otp",
+							"value": "66205"
+						}
+					]
+				}
 			},
 			"response": []
 		},
