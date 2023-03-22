@@ -1909,8 +1909,29 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/account/sendemailotp?email=damiuser001@yopmail.com",
+					"protocol": "https",
+					"host": [
+						"iws-api-staging",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"sendemailotp"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "damiuser001@yopmail.com"
+						}
+					]
+				}
 			},
 			"response": []
 		},
