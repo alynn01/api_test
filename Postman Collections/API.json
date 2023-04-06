@@ -2025,14 +2025,14 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjhlMmU1MDk2LTU3OGQtNDRkZi1iYzBkLWY5NzgzOGM3MzM5MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiSUQyN0MzMzRYWlpHWEg0N0xBT0VCRklRV0dZUEpGU1IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsImp0aSI6IjY1ODA5NWVjLTc4NTQtNGI0OC1iMWQyLTJmMzk1YzhjMmM4ZCIsImVtYWlsIjoiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJGaXJzdE5hbWUiOiJEYW1pIiwiTGFzdE5hbWUiOiJCb3NzIiwiQ29tcGFueUlkIjoiZjAwODA1NDgtNGRiYi00ZDI1LWI0NDAtMjE0ZWQ2YjlmNGNlIiwiVXNlcklkIjoiOGUyZTUwOTYtNTc4ZC00NGRmLWJjMGQtZjk3ODM4YzczMzkwIiwibmJmIjoxNjgwMTAyMjUzLCJleHAiOjE2ODAxMDU4NTMsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.9Vxv6EhuNDk5jQ8UYRd9CYSFnwjonqPYMGXH1XpjOyw"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjhlMmU1MDk2LTU3OGQtNDRkZi1iYzBkLWY5NzgzOGM3MzM5MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiSUQyN0MzMzRYWlpHWEg0N0xBT0VCRklRV0dZUEpGU1IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIFVzZXIiLCJzdWIiOiJkYW1pdXNlcjAwMUB5b3BtYWlsLmNvbSIsImp0aSI6IjRkNWI5YjZjLTRlZDUtNDU5Yi04YWE2LWRjZWJiMzBlM2VmNyIsImVtYWlsIjoiZGFtaXVzZXIwMDFAeW9wbWFpbC5jb20iLCJGaXJzdE5hbWUiOiJEYW1pIiwiTGFzdE5hbWUiOiJCb3NzIiwiQ29tcGFueUlkIjoiZjAwODA1NDgtNGRiYi00ZDI1LWI0NDAtMjE0ZWQ2YjlmNGNlIiwiVXNlcklkIjoiOGUyZTUwOTYtNTc4ZC00NGRmLWJjMGQtZjk3ODM4YzczMzkwIiwibmJmIjoxNjgwODAyNTg2LCJleHAiOjE2ODA4MDYxODYsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.8s1Oukc_YRMu6G6X9SceK0NEg27uGYz_QsqNU0wdz7c"
 					}
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Damilare\",\n    \"middleName\": \"Peter\",\n    \"lastName\": \"Boss\",\n    \"preferredName\": \"Damilare\",\n    \"address1\": \"7, Kola Onaewu Street, Lagos, undefined\",\n    \"city\": \"Lagos\",\n    \"country\": \"NG\",\n    \"stateRegion\": \"LA\",\n    \"postalCode\": \"100102\",\n    \"birthDate\": \"31-JAN-2001\",\n    \"idType\": 3,\n    \"idValue\": \"KTU76978AAOO\",\n    \"mobilePhoneNumber\": {\n        \"countryCode\": \"234\",\n        \"number\": \"06233344455\",\n        \"fullNumber\": \"23406233344455\",\n        \"internationalNumber\": \"23406233344455\"\n    },\n    \"emailAddress\": \"damiuser001@yopmail.com\",\n    \"accountSource\": \"ROAMWARE\",\n    \"subCompany\": \"12701304\",\n    \"solId\": \"1\"\n}",
+					"raw": "{\n    \"firstName\": \"Damilare\",\n    \"middleName\": \"Peter\",\n    \"lastName\": \"Boss\",\n    \"preferredName\": \"Damilare\",\n    \"address1\": \"7, Kola Onaewu Street, Lagos, undefined\",\n    \"city\": \"Lagos\",\n    \"country\": \"NG\",\n    \"stateRegion\": \"ES\",\n    \"postalCode\": \"100102\",\n    \"birthDate\": \"31-JAN-2001\",\n    \"idType\": 3,\n    \"idValue\": \"KTU76978AAOO\",\n    \"mobilePhoneNumber\": {\n        \"countryCode\": \"234\",\n        \"number\": \"06233344455\",\n        \"fullNumber\": \"23406233344455\",\n        \"internationalNumber\": \"23406233344455\"\n    },\n    \"emailAddress\": \"damiuser001@yopmail.com\",\n    \"accountSource\": \"ROAMWARE\",\n    \"subCompany\": \"12701304\",\n    \"solId\": \"1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -2040,6 +2040,160 @@
 					}
 				},
 				"url": "https://iws-api-staging.azurewebsites.net/api/v1/thirdpartyprocessor/8e2e5096-578d-44df-bc0d-f97838c73390/gtp/virtual/register"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "e2c2bb61-f396-4fe9-bcd2-3375b0ff2fff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJkZTA0Mjg0LTlmZTktNDVkMC1hMmM4LWRlNmRhZWVkZDEzYyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsicG9tc2lhMDFAeW9wbWFpbC5jb20iLCJwb21zaWEwMUB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwb21zaWEwMUB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiR0lDUDJXS0hIV1gyUFhXU0s2Qk5XTkoyTVRWQTIyWEIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBdWRpdCBBZG1pbiIsInN1YiI6InBvbXNpYTAxQHlvcG1haWwuY29tIiwianRpIjoiOGEwZDAyODItYjMzYi00NDhkLTg3MmEtMGI3NThiZDQxNWM3IiwiZW1haWwiOiJwb21zaWEwMUB5b3BtYWlsLmNvbSIsIkZpcnN0TmFtZSI6IlByb2dyYW1zcmVnIiwiTGFzdE5hbWUiOiJBZ2FtYSIsIkNvbXBhbnlJZCI6ImYwMDgwNTQ4LTRkYmItNGQyNS1iNDQwLTIxNGVkNmI5ZjRjZSIsIlVzZXJJZCI6IjJkZTA0Mjg0LTlmZTktNDVkMC1hMmM4LWRlNmRhZWVkZDEzYyIsIm5iZiI6MTY4MDYwMDIwMSwiZXhwIjoxNjgwNjAzODAxLCJpc3MiOiJodHRwczovL2Vzc29sby5jb20iLCJhdWQiOiJodHRwczovL2Vzc29sby5jb20ifQ.WLoay0VHdG_RPU6KnVUFfJ2j8Hcer65zaQHjhLZ_UGo"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"programOwnerFirstName\": \"Balogun\",\n    \"programOwnerLastName\": \"Bello\",\n    \"programOwnerEmail\": \"fashobalo@qa.team\",\n    \"programOwnerPhoneNumber\": \"9072609472\",\n    \"internationalCallingCode\": \"+234\",\n    \"adminRole\": \"Support Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/company/me/invite-admin?redirectUrl=https%3A%2F%2Fdevcompanyadmin.essolo.com%2F",
+					"protocol": "https",
+					"host": [
+						"iws-api-staging",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"company",
+						"me",
+						"invite-admin"
+					],
+					"query": [
+						{
+							"key": "redirectUrl",
+							"value": "https%3A%2F%2Fdevcompanyadmin.essolo.com%2F"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Admin Users",
+			"id": "2779a114-3f71-4476-b39e-84a2105746dc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRiYWU4NmEwLTFhMzktNGYyNy04ODgyLTZkOGQ0YmIyMWZlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJwb21zaWEwMkB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwb21zaWEwMkB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiTTdMM0E0UE9XNU9XS0dIR0taN0dIR01JR1FXQlRDS1AiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIEFkbWluIiwic3ViIjoicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJqdGkiOiI2NGRlNzQyNC02NzVkLTQ5NWUtOTcxNS1iZTZmYzhjMjA0Y2QiLCJlbWFpbCI6InBvbXNpYTAyQHlvcG1haWwuY29tIiwiRmlyc3ROYW1lIjoiVWp1IiwiTGFzdE5hbWUiOiJFbnlpIiwiQ29tcGFueUlkIjoiZjlhOWY1ZmQtYzhlNS00ZmU1LWI0MmEtNjM1NTAzMmQ1MTQzIiwiVXNlcklkIjoiNGJhZTg2YTAtMWEzOS00ZjI3LTg4ODItNmQ4ZDRiYjIxZmU4IiwibmJmIjoxNjgwNjA0NjA3LCJleHAiOjE2ODA2MDgyMDcsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.4fDeh8-B9E6tGsIZppRE4BLTVspqVFkAPzveEOR8tcg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://iws-api-staging.azurewebsites.net/api/v1/company/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Admin Roles",
+			"id": "79af479d-6e75-4a25-aea6-63aa0b6a2a6e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRiYWU4NmEwLTFhMzktNGYyNy04ODgyLTZkOGQ0YmIyMWZlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJwb21zaWEwMkB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwb21zaWEwMkB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiTTdMM0E0UE9XNU9XS0dIR0taN0dIR01JR1FXQlRDS1AiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIEFkbWluIiwic3ViIjoicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJqdGkiOiJlMmYxNzBjZS1lYWY5LTQwNDMtYjg0OS04M2VmZjNlZDdkMWUiLCJlbWFpbCI6InBvbXNpYTAyQHlvcG1haWwuY29tIiwiRmlyc3ROYW1lIjoiVWp1IiwiTGFzdE5hbWUiOiJFbnlpIiwiQ29tcGFueUlkIjoiZjlhOWY1ZmQtYzhlNS00ZmU1LWI0MmEtNjM1NTAzMmQ1MTQzIiwiVXNlcklkIjoiNGJhZTg2YTAtMWEzOS00ZjI3LTg4ODItNmQ4ZDRiYjIxZmU4IiwibmJmIjoxNjgwNjg1ODA1LCJleHAiOjE2ODA2ODk0MDUsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.Up0B2BL5O2bcyD20bB2ilmDouLIQg76-RWNe8RY2TWU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://iws-api-staging.azurewebsites.net/api/v1/roles"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Admin Roles",
+			"id": "ac5e61fc-f2a8-485b-b19c-f35c672f8716",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRiYWU4NmEwLTFhMzktNGYyNy04ODgyLTZkOGQ0YmIyMWZlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOlsicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJwb21zaWEwMkB5b3BtYWlsLmNvbSJdLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwb21zaWEwMkB5b3BtYWlsLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiTTdMM0E0UE9XNU9XS0dIR0taN0dIR01JR1FXQlRDS1AiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9ncmFtIEFkbWluIiwic3ViIjoicG9tc2lhMDJAeW9wbWFpbC5jb20iLCJqdGkiOiI2NGRlNzQyNC02NzVkLTQ5NWUtOTcxNS1iZTZmYzhjMjA0Y2QiLCJlbWFpbCI6InBvbXNpYTAyQHlvcG1haWwuY29tIiwiRmlyc3ROYW1lIjoiVWp1IiwiTGFzdE5hbWUiOiJFbnlpIiwiQ29tcGFueUlkIjoiZjlhOWY1ZmQtYzhlNS00ZmU1LWI0MmEtNjM1NTAzMmQ1MTQzIiwiVXNlcklkIjoiNGJhZTg2YTAtMWEzOS00ZjI3LTg4ODItNmQ4ZDRiYjIxZmU4IiwibmJmIjoxNjgwNjA0NjA3LCJleHAiOjE2ODA2MDgyMDcsImlzcyI6Imh0dHBzOi8vZXNzb2xvLmNvbSIsImF1ZCI6Imh0dHBzOi8vZXNzb2xvLmNvbSJ9.4fDeh8-B9E6tGsIZppRE4BLTVspqVFkAPzveEOR8tcg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iws-api-staging.azurewebsites.net/api/v1/user/0333d7d3-89b9-415c-a485-6a82615a34de/update-role?roleName=Audit%20Admin",
+					"protocol": "https",
+					"host": [
+						"iws-api-staging",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"0333d7d3-89b9-415c-a485-6a82615a34de",
+						"update-role"
+					],
+					"query": [
+						{
+							"key": "roleName",
+							"value": "Audit%20Admin"
+						}
+					]
+				}
 			},
 			"response": []
 		}
